@@ -6,9 +6,9 @@ const int ledButton 2;
 // const int led1 = 3;
 // const int led2 = 4;
 // const int led3 = 5;
-const int livePointIndicator1 = 3
-const int livePointIndicator2 = 4
-const int livePointIndicator3 = 5
+const int livePointIndicator1 = 3;
+const int livePointIndicator2 = 4;
+const int livePointIndicator3 = 5;
 
 int lives = 3;
 // int state = 0;

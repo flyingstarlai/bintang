@@ -62,7 +62,7 @@ void loop()
     }
   
     // decrease lives
-    readButton = digitalRead(hit);
+    readButton = digitalRead(buttonHit);
     if (readButton == HIGH)
     {
       lives -= 1;

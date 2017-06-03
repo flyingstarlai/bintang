@@ -71,27 +71,27 @@ void loop()
     // start checking live points
     if (lives == 3) // use lives == 3 not lives = 3
     {
-      digitalWrite(led1, HIGH);
-      digitalWrite(led2, HIGH);
-      digitalWrite(led3, HIGH);
+      digitalWrite(livePointIndicator1, HIGH);
+      digitalWrite(livePointIndicator2, HIGH);
+      digitalWrite(livePointIndicator3, HIGH);
     }
     else if (lives == 2)
     {
-      digitalWrite(led1, LOW);
-      digitalWrite(led2, HIGH);
-      digitalWrite(led3, HIGH);
+      digitalWrite(livePointIndicator1, LOW);
+      digitalWrite(livePointIndicator2, HIGH);
+      digitalWrite(livePointIndicator3, HIGH);
     }
     else if (lives == 1)
     {
-      digitalWrite(led1, LOW);
-      digitalWrite(led2, LOW);
-      digitalWrite(led3, HIGH);
+      digitalWrite(livePointIndicator1, LOW);
+      digitalWrite(livePointIndicator2, LOW);
+      digitalWrite(livePointIndicator3, HIGH);
     }
     else if (lives == 0)
     {
-      digitalWrite(led1, LOW);
-      digitalWrite(led2, LOW);
-      digitalWrite(led3, LOW);
+      digitalWrite(livePointIndicator1, LOW);
+      digitalWrite(livePointIndicator2, LOW);
+      digitalWrite(livePointIndicator3, LOW);
 
       // set game over
       gameRunning = false;

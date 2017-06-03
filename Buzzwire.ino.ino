@@ -1,11 +1,18 @@
-const int hit = 6;
+// const int hit = 6;
+const int buttonHit = 6;
 const int button = 7;
-const int led = 2;
-const int led1 = 3;
-const int led2 = 4;
-const int led3 = 5;
+// const int led = 2;
+const int ledButton 2;
+// const int led1 = 3;
+// const int led2 = 4;
+// const int led3 = 5;
+const int livePointIndicator1 = 3
+const int livePointIndicator2 = 4
+const int livePointIndicator3 = 5
+
 int lives = 3;
-int state = 0;
+// int state = 0;
+int readButton = 0;
 int gameRunning = false;
 
 void setup()
@@ -22,57 +29,74 @@ void setup()
 
 void loop()
 {
-  state = digitalRead(button);
-  if (state == HIGH)
+
+  // reset live points
+  lives = 3;
+
+  // read button
+  readButton = digitalRead(button);
+  if (readButton == HIGH)
   {
+    // start game
     gameRunning = true;
   }
-  else if (lives = 0)
-  {
-    gameRunning = false;
-  }
+  
+  // else if (lives = 0)
+  // {
+  //   gameRunning = false;
+  // }
 
   while(gameRunning)
   {
-    state = digitalRead(hit);
-    if (state == HIGH)
+  // read button hit
+    readButton = digitalRead(buttonHit);
+    if (readButton == HIGH)
     {
       digitalWrite(led, HIGH);
-      delay(1500);
+      // delay(1500); waktu delay program ga merespon apa-apa
+      delay(500);
     }
     else
     {
       digitalWrite(led, LOW);
     }
   
-    state = digitalRead(hit);
-    if (state == HIGH)
+    // decrease lives
+    readButton = digitalRead(hit);
+    if (readButton == HIGH)
     {
       lives -= 1;
     }
-    if (lives = 3)
+
+    // start checking live points
+    if (lives == 3) // use lives == 3 not lives = 3
     {
       digitalWrite(led1, HIGH);
       digitalWrite(led2, HIGH);
       digitalWrite(led3, HIGH);
     }
-    else if (lives = 2)
+    else if (lives == 2)
     {
       digitalWrite(led1, LOW);
       digitalWrite(led2, HIGH);
       digitalWrite(led3, HIGH);
     }
-    else if (lives = 1)
+    else if (lives == 1)
     {
       digitalWrite(led1, LOW);
       digitalWrite(led2, LOW);
       digitalWrite(led3, HIGH);
     }
-    else if (lives = 0)
+    else if (lives == 0)
     {
       digitalWrite(led1, LOW);
       digitalWrite(led2, LOW);
       digitalWrite(led3, LOW);
+
+      // set game over
+      gameRunning = false;
     }
+
+    // end checking live points
   }
 }
